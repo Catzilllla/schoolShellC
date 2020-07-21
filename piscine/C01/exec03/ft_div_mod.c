@@ -1,37 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_div_mod.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iadella <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/20 23:18:27 by iadella           #+#    #+#             */
-/*   Updated: 2020/07/21 02:34:28 by iadella          ###   ########.fr       */
+/*   Created: 2020/07/21 02:36:03 by iadella           #+#    #+#             */
+/*   Updated: 2020/07/21 03:50:33 by iadella          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include <stdio.h>
 
-void ft_swap(int *a, int *b)
+void		ft_div_mod(int a, int b, int *div, int *mod)
 {
-	int c = *a;
-	
-	*a = *b;
-	*b = c;
+	int w;
+	int w1;
+
+	 w = a % b;
+	 w1 = a / b;
+	 
+	 *div = &w;
+	 *mod = &w1;
 }
 
 int main(void)
 {
-	int e1 = 5;
-	int *f1 = &e1;
-	
-	int e2 = 11;
-	int *f2 = &e2;
-	
-	printf("e1 = %i\ne2 = %i\n\n", e1, e2);
-	printf("*f1 = %p\n*f2 = %p\n\n", &f1, &f2);
-	ft_swap(f1, f2);
-	printf("swap e1 & e2:\ne1 = %i\ne2 = %i\n\n", *f1, *f2);
-	return 0;
+	printf("Piscine C01 - exec03");
+
+	int e1, e2, del, ost;
+
+	e1 = 5;
+	e2 = 11;
+
+	printf("e1 = %i\ne2 = %i\n", e1, e2);
+	ft_div_mod(e1, e2, del, ost);
+	printf("del = %i\nost = %i\n", del, ost);
 }

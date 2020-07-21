@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iadella <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/20 23:18:27 by iadella           #+#    #+#             */
-/*   Updated: 2020/07/21 02:34:28 by iadella          ###   ########.fr       */
+/*   Created: 2020/07/21 04:32:27 by iadella           #+#    #+#             */
+/*   Updated: 2020/07/21 05:09:32 by iadella          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include <stdio.h>
+#include <string.h>
+#include <unistd.h>
 
-void ft_swap(int *a, int *b)
+char		*ft_strcpy(char *dest, char *src)
 {
-	int c = *a;
-	
-	*a = *b;
-	*b = c;
+	while(*src != '\0')
+	{
+		*dest = *src;
+		src++;
+	}
 }
 
 int main(void)
 {
-	int e1 = 5;
-	int *f1 = &e1;
+	char a[] = "Hello";
+	char b[] = "FFFFF";
 	
-	int e2 = 11;
-	int *f2 = &e2;
-	
-	printf("e1 = %i\ne2 = %i\n\n", e1, e2);
-	printf("*f1 = %p\n*f2 = %p\n\n", &f1, &f2);
-	ft_swap(f1, f2);
-	printf("swap e1 & e2:\ne1 = %i\ne2 = %i\n\n", *f1, *f2);
-	return 0;
+	ft_strcpy(a, b);
+	printf("a = %s\nb = %s\n", a, b);
 }
