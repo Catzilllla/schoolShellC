@@ -1,25 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iadella <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/16 20:10:21 by iadella           #+#    #+#             */
-/*   Updated: 2020/07/21 21:25:24 by iadella          ###   ########.fr       */
+/*   Created: 2020/07/21 23:32:24 by iadella           #+#    #+#             */
+/*   Updated: 2020/07/22 00:14:02 by iadella          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// C00 exec00
+// C04 exec01
+// Create a function that displays a string of characters on the standard output
 
+#include <stdio.h>
 #include <unistd.h>
 
-void		ft_putchar(char c)
+void ft_putstr(char *str)
 {
-	write(1, &c, 1);
+	int i = 0;
+
+	while(str[i] != '\0')
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
+	
 }
 
 int main(void)
 {
-	ft_putchar('A');
+	char s[] = "Hello World!";
+	
+	ft_putstr(s);
 }
